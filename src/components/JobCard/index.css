@@ -100,3 +100,11 @@
   background-color: #6366f1;
   font-weight: 500px;
 }
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background-color: #000000;
+  height: 100vh;
+}

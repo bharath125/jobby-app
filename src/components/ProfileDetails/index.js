@@ -43,7 +43,7 @@ class ProfileDetails extends Component {
     return isApiSuccess ? (
       <div className="profile-container">
         <div>
-          <img className="profile-logo" src={profileImageUrl} alt={name} />
+          <img className="profile-logo" src={profileImageUrl} alt="profile" />
         </div>
         <h1 className="profile-name">{name}</h1>
         <p>{shortBio}</p>

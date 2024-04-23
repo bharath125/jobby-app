@@ -52,10 +52,8 @@ class JobItemDetails extends Component {
             <p>{packagePerAnnum}</p>
           </div>
           <hr />
-          <div>
-            <h1>Description</h1>
-            <p>{jobDescription}</p>
-          </div>
+          <h1>Description</h1>
+          <p>{jobDescription}</p>
         </li>
       </Link>
     )

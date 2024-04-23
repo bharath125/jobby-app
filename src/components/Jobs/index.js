@@ -60,57 +60,22 @@ const apiStatusConstants = {
 class Jobs extends Component {
   state = {
     jobsList: [],
-    searchValue: '',
     apiStatus: apiStatusConstants.initial,
+    searchValue: '',
+    employmentType: '',
+    packagePerAnnum: '',
   }
 
   componentDidMount() {
     this.getJobDetails()
   }
 
-  onChangeSearch = event => {
-    this.setState({searchValue: event.target.value})
-  }
-
-  onClickSearch = () => {
-    const {jobsList, searchValue} = this.state
-
-    const newJobsList = jobsList.filter(each =>
-      each.title.toLowerCase().includes(searchValue.toLowerCase()),
-    )
-    this.setState({jobsList: [...newJobsList]})
-  }
-
-  onChangeCheckBox = event => {
-    const {jobsList} = this.state
-    console.log(event.target.value)
-
-    const newJobsList = jobsList.filter(each =>
-      each.employmentType.includes(event.target.value),
-    )
-    this.setState({jobsList: [...newJobsList]})
-  }
-
-  onRetry = () => {
-    this.getJobDetails()
-  }
-
-  onChangeRadio = event => {
-    const {jobsList} = this.state
-    const newJobsList = jobsList.filter(
-      each =>
-        Number(each.packagePerAnnum.slice(0, 2)) >
-        Number(event.target.value.slice(0, 2)),
-    )
-
-    this.setState({jobsList: [...newJobsList]})
-  }
-
   getJobDetails = async () => {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
-    const url = 'https://apis.ccbp.in/jobs'
+    const {searchValue, employmentType, packagePerAnnum} = this.state
+    const url = `https://apis.ccbp.in/jobs?employment_type=${employmentType}&minimum_package=${packagePerAnnum}&search=${searchValue}`
     const jwtToken = Cookies.get('jwt_token')
     const options = {
       method: 'GET',
@@ -138,6 +103,50 @@ class Jobs extends Component {
     } else {
       this.setState({apiStatus: apiStatusConstants.failure})
     }
+  }
+
+  onChangeSearch = event => {
+    this.setState({searchValue: event.target.value})
+  }
+
+  onClickSearch = () => {
+    const {jobsList, searchValue} = this.state
+
+    const newJobsList = jobsList.filter(each =>
+      each.title.toLowerCase().includes(searchValue.toLowerCase()),
+    )
+    this.setState({jobsList: [...newJobsList], searchValue}, this.getJobDetails)
+  }
+
+  onChangeCheckBox = event => {
+    const {jobsList} = this.state
+    console.log(event.target.value)
+
+    const newJobsList = jobsList.filter(each =>
+      each.employmentType.includes(event.target.value),
+    )
+    this.setState({
+      jobsList: [...newJobsList],
+      employmentType: event.target.value,
+    })
+  }
+
+  onRetry = () => {
+    this.getJobDetails()
+  }
+
+  onChangeRadio = event => {
+    const {jobsList} = this.state
+    const newJobsList = jobsList.filter(
+      each =>
+        Number(each.packagePerAnnum.slice(0, 2)) >
+        Number(event.target.value.slice(0, 2)),
+    )
+
+    this.setState({
+      jobsList: [...newJobsList],
+      packagePerAnnum: event.target.value,
+    })
   }
 
   renderLoader = () => (
