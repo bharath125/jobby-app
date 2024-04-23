@@ -1,0 +1,102 @@
+.card-container {
+  padding: 40px;
+  background-color: #272727;
+  margin: 30px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.logo-job-name {
+  display: flex;
+}
+.company-logo {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.job-title {
+  font-size: 24px;
+}
+.rating {
+  font-size: 16px;
+  font-weight: 600;
+}
+.loc-job-type {
+  display: flex;
+}
+.location {
+  margin-right: 10px;
+}
+.loc-salary-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+}
+.skill-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.skill-container {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.skill-item {
+  display: flex;
+  justify-content: space-around;
+}
+.company-life {
+  display: flex;
+  justify-content: space-between;
+}
+.website-url {
+  display: flex;
+  justify-content: space-between;
+}
+.loc-employment {
+  display: flex;
+  justify-content: space-around;
+}
+.similar-job {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+.similar-job-container {
+  margin: 20px;
+  color: #ffffff;
+}
+.job-card {
+  background-color: #000000;
+}
+.in-similar-job {
+  background-color: #272727;
+  margin: 10px;
+  max-height: 500px;
+  border-radius: 10px;
+  max-width: 350px;
+  padding: 30px;
+}
+.failure-view {
+  width: 150px;
+  height: 100px;
+}
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.jobs-btn {
+  border: 0;
+  border-radius: 5px;
+  padding: 7px 12px 7px 12px;
+  color: #ffffff;
+  background-color: #6366f1;
+  font-weight: 500px;
+}

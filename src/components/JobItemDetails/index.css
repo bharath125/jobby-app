@@ -1,0 +1,39 @@
+.job-detail-container {
+  background-color: #272727;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+  color: #ffffff;
+}
+.logo-job-name {
+  display: flex;
+}
+.company-logo {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.job-title {
+  font-size: 24px;
+}
+.rating {
+  font-size: 16px;
+  font-weight: 600;
+}
+.loc-job-type {
+  display: flex;
+}
+.location {
+  margin-right: 10px;
+}
+.loc-salary-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+}
+.link {
+  text-decoration: none;
+}

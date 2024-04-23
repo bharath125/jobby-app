@@ -1,0 +1,32 @@
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: #272727;
+  padding: 5px 30px 5px 30px;
+}
+.home-jobs {
+  display: flex;
+  justify-content: space-around;
+}
+.logout-btn {
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  color: #ffffff;
+  background-color: #6366f1;
+  font-weight: 500px;
+  margin-top: 10px;
+}
+.home-home {
+  margin-right: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+}
+.home-jobs {
+  margin-right: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+}
